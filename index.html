@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html manifest="manifest.appcache">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sample Hosted Plugin</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="geolocation-controller.js"></script>
+    <script src="plugin.js"></script>
+    <script>
+        (function () {
+            window.addEventListener('load', function () {
+                var plugin = new OfscPlugin(true);
+                plugin.init();
+            })
+        })();
+    </script>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden
+        }
+    </style>
+</head>
+
+<body id="ofscPluginBody">
+    <header class="header">
+        <h1 class="header__title">Geolocation</h1>
+    </header>
+    <main class="content">
+        <section class="content__controls">
+            <button id="get-location-button">Get Location</button> 
+        </section>
+        <section class="content__result">
+            <table class="result-table">
+                <tbody>
+                    <tr>
+                        <th>Latitude</th>
+                        <td id="latitude"></td>
+                    </tr>
+                    <tr>
+                        <th>Longitude</th>
+                        <td id="longitude"></td>
+                    </tr>
+                    <tr>
+                        <th>Accuracy</th>
+                        <td id="accuracy"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+
+
+</html>
